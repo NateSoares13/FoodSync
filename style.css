@@ -1,5 +1,4 @@
 #queroDoar {
-    height: 100vh;
     background-image: url("imagens/background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,15 +17,15 @@
     text-align: center;
 }
 
-p {
+#sobreNos p {
     margin-top: 40px;
 }
 
-i {
+#sobreNos i {
     color: #23942c;
     font-size: 80px;
 }
 
-form {
+#sobreNos form {
     display: inline-block;
 }
