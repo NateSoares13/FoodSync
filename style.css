@@ -1,29 +1,32 @@
-.cabecalho{
+#queroDoar {
+    height: 100vh;
+    background-image: url("imagens/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cabecalho {
     background-color: #23942c;
     color: white;
     padding: 150px 150px 50px;
     text-align: justify;
-
 }
 
-.cadastro{
+.cadastro {
     margin: 50px;
     margin-top: 150px;
     text-align: center;
-
-    
 }
 
-p{
+p {
     margin-top: 40px;
-
 }
 
-i{
+i {
     color: #23942c;
-    font-size: 80px
+    font-size: 80px;
 }
 
-form{
+form {
     display: inline-block;
 }
