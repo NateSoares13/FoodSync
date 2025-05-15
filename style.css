@@ -1,4 +1,10 @@
-#queroDoar {
+#quero_doar {
+    background-image: url("imagens/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#login_esquerda {
     background-image: url("imagens/background.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,15 +23,23 @@
     text-align: center;
 }
 
-#sobreNos p {
+#sobre_nos p {
     margin-top: 40px;
 }
 
-#sobreNos i {
+#sobre_nos i {
     color: #23942c;
     font-size: 80px;
 }
 
-#sobreNos form {
+#sobre_nos form {
     display: inline-block;
+}
+
+#btn_entrar {
+    background-color: #23942c;
+}
+
+#btn_criar_conta {
+    background-color: #e9ecef;
 }
