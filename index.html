@@ -163,17 +163,22 @@
                     </p>
                     <!-- Cadastro do nome | Contato -->
                     <form 
-                        onsubmit="return validarMensagem()"
+                        onsubmit="return validarNome() && validarMensagem()"
                     >
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">
                                 <label class="form-label">Nome</label>
                                 <input
                                     type="text"
+                                    id="nomeContato"
                                     class="form-control"
                                     placeholder="Seu Nome"
                                     required
                                 />
+                                <p 
+                                    id="erroNome"
+                                    style="color: red;"
+                                ></p>
                             </div>
                             <!-- Cadastro do email | Contato -->
                             <div class="col-md-6">

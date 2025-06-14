@@ -8,3 +8,14 @@ function validarMensagem(){
     document.getElementById("erroMensagem").innerHTML = ""
     return true;
 }
+
+// Função para validar o nome 
+function validarNome(){
+    let nome = document.getElementById("nomeContato").value;
+    if (nome.split(" ")[1] === undefined){
+        document.getElementById("erroNome").innerHTML = "Insira nome e sobrenome.";
+        return false
+    }
+    document.getElementById("erroNome").innerHTML = ""
+    return true
+}
