@@ -17,9 +17,7 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
         />
-        <link 
-            rel="stylesheet" 
-            href="style.css" />
+        <link rel="stylesheet" href="style.css" />
         <title>FoodSync</title>
     </head>
     <body>
@@ -71,7 +69,11 @@
                             </li>
                         </ul>
                         <!-- Vídeo informativo sobre o projeto -->
-                        <a class="nav-link text-white" href="https://www.youtube.com/watch?v=paOSR-duALo" target="_blank">
+                        <a
+                            class="nav-link text-white"
+                            href="https://www.youtube.com/watch?v=paOSR-duALo"
+                            target="_blank"
+                        >
                             <i class="bi bi-youtube"></i>
                         </a>
                     </div>
@@ -98,26 +100,28 @@
         </div>
         <!-- Sobre nós | Segunda seção -->
         <div id="sobre_nos">
-            <div class="cabecalho">
-                <h1>Sobre Nós</h1>
-                <p>
-                    Somos a FoodSync, uma iniciativa que nasceu com o propósito
-                    de unir tecnologia, responsabilidade social e
-                    sustentabilidade. Nosso principal objetivo é combater a
-                    insegurança alimentar por meio de uma plataforma que conecta
-                    doadores de alimentos como restaurantes, padarias e
-                    residências a organizações que realizam a redistribuição
-                    para pessoas em situação de vulnerabilidade. Acreditamos que
-                    a tecnologia pode ser uma grande aliada na luta contra a
-                    fome e o desperdício. Por isso, desenvolvemos uma solução
-                    que facilita a identificação de pontos de coleta de
-                    alimentos, tornando o processo mais ágil, eficiente e
-                    acessível.
-                </p>
+            <div class="cabecalho p-md-5 p-3">
+                <div class="container">
+                    <h1 class="mx-2 mt-2">Sobre Nós</h1>
+                    <p class="mx-2 mb-2">
+                        Somos a FoodSync, uma iniciativa que nasceu com o
+                        propósito de unir tecnologia, responsabilidade social e
+                        sustentabilidade. Nosso principal objetivo é combater a
+                        insegurança alimentar por meio de uma plataforma que
+                        conecta doadores de alimentos como restaurantes,
+                        padarias e residências a organizações que realizam a
+                        redistribuição para pessoas em situação de
+                        vulnerabilidade. Acreditamos que a tecnologia pode ser
+                        uma grande aliada na luta contra a fome e o desperdício.
+                        Por isso, desenvolvemos uma solução que facilita a
+                        identificação de pontos de coleta de alimentos, tornando
+                        o processo mais ágil, eficiente e acessível.
+                    </p>
+                </div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 cadastro">
+            <div class="container mt-5">
+                <div class="row gap-5 pt-sm-4 align-items-center">
+                    <div class="col-lg cadastro container mx-2">
                         <h2>Cadastro de doações</h2>
                         <p>
                             Doadores podem cadastrar facilmente alimentos
@@ -127,7 +131,7 @@
                         </p>
                         <i class="bi bi-truck"></i>
                     </div>
-                    <div class="col-lg-3 cadastro">
+                    <div class="col-lg cadastro container mx-2">
                         <h2>Notificações</h2>
                         <p>
                             ONGs e instituições cadastradas recebem notificações
@@ -138,7 +142,7 @@
                         </p>
                         <i class="bi bi-phone-vibrate"></i>
                     </div>
-                    <div class="col-lg-3 cadastro">
+                    <div class="col-lg cadastro container mx-2">
                         <h2>Entrega Ágil</h2>
                         <p>
                             Com base na localização dos doadores e das
@@ -162,9 +166,7 @@
                         mensagem e responderemos em breve.
                     </p>
                     <!-- Cadastro do nome | Contato -->
-                    <form 
-                        onsubmit="return validarNome() && validarMensagem()"
-                    >
+                    <form onsubmit="return validarNome() && validarMensagem()">
                         <div class="row g-3 mb-3">
                             <div class="col-md-6">
                                 <label class="form-label">Nome</label>
@@ -175,10 +177,7 @@
                                     placeholder="Seu Nome"
                                     required
                                 />
-                                <p 
-                                    id="erroNome"
-                                    style="color: red;"
-                                ></p>
+                                <p id="erroNome" style="color: red"></p>
                             </div>
                             <!-- Cadastro do email | Contato -->
                             <div class="col-md-6">
@@ -202,7 +201,9 @@
                         </div>
                         <!-- Cadastro da mensagem | Contato -->
                         <div class="mb-3">
-                            <label class="form-label" for="mensagem">Mensagem</label>
+                            <label class="form-label" for="mensagem"
+                                >Mensagem</label
+                            >
                             <textarea
                                 id="mensagem"
                                 name="mensagem"
@@ -211,9 +212,9 @@
                                 placeholder="Digite sua mensagem aqui..."
                                 required
                             ></textarea>
-                            <p 
-                                id="erroMensagem" 
-                                style="color: rgb(255, 0, 0);"
+                            <p
+                                id="erroMensagem"
+                                style="color: rgb(255, 0, 0)"
                             ></p>
                         </div>
 
@@ -253,7 +254,9 @@
                                 class="d-block mt-2"
                                 >Seg a Sex, das 9h às 22h</span
                             >
-                            <span class="d-block">Sáb e feriados: 10h às 14h</span>
+                            <span class="d-block"
+                                >Sáb e feriados: 10h às 14h</span
+                            >
                         </p>
                     </div>
                 </div>

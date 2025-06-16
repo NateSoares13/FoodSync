@@ -13,18 +13,11 @@
 .cabecalho {
     background-color: #23942c;
     color: white;
-    padding: 150px 150px 50px;
     text-align: justify;
 }
 
 .cadastro {
-    margin: 50px;
-    margin-top: 150px;
     text-align: center;
-}
-
-#sobre_nos p {
-    margin-top: 40px;
 }
 
 #sobre_nos i {
