@@ -12,7 +12,7 @@ function validarMensagem(){
 // Função para validar o nome 
 function validarNome(){
     let nome = document.getElementById("nomeContato").value;
-    if (nome.split(" ")[1] === undefined){
+    if (nome.split(" ")[1] === undefined || nome.split(" ")[1] === ""){
         document.getElementById("erroNome").innerHTML = "Insira nome e sobrenome.";
         return false
     }
