@@ -1,0 +1,78 @@
+import "./Login.css";
+import foodsync from "../assets/foodsync.png";
+import foodsync_vertical from "../assets/foodsync_vertical.png";
+
+function Login() {
+    return (
+        <>
+            <div class="container-fluid">
+                <div class="row vh-100">
+                    <div
+                        id="login_esquerda"
+                        class="justify-content-center align-items-center d-flex col-lg-7 text-white h-100 row"
+                    >
+                        <div class="d-flex flex-column col-lg-6 col-md-8 col-10">
+                            <img
+                                class="d-block mx-auto ms-0 mb-4"
+                                src={foodsync_vertical}
+                                alt="FoodSync"
+                            />
+                            <div>
+                                <p>
+                                    Somos a FoodSync, uma iniciativa que nasceu
+                                    com o propósito de unir tecnologia,
+                                    responsabilidade social e sustentabilidade.
+                                    Nosso principal objetivo é combater a
+                                    insegurança alimentar por meio de uma
+                                    plataforma que conecta doadores de alimentos
+                                    como restaurantes, padarias e residências a
+                                    organizações que realizam a redistribuição
+                                    para pessoas em situação de vulnerabilidade.
+                                    Acreditamos que a tecnologia pode ser uma
+                                    grande aliada na luta contra a fome e o
+                                    desperdício. Por isso, desenvolvemos uma
+                                    solução que facilita a identificação de
+                                    pontos de coleta de alimentos, tornando o
+                                    processo mais ágil, eficiente e acessível.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="justify-content-center align-items-center d-flex col-lg-5 text-white h-100 row">
+                        <div class="d-flex flex-column w-50">
+                            <img
+                                class="d-block mx-auto mb-5"
+                                src={foodsync}
+                                alt="FoodSync"
+                            />
+                            <input
+                                type="text"
+                                class="border rounded form-control mb-2 mt-5"
+                                placeholder="Seu CPF/CNPJ"
+                            />
+                            <input
+                                type="password"
+                                class="border rounded form-control mt-2 mb-5"
+                                placeholder="Sua senha"
+                            />
+                            <button
+                                id="btn_entrar"
+                                class="btn p-2 text-white mb-2 mt-5"
+                            >
+                                Entrar
+                            </button>
+                            <button
+                                id="btn_criar_conta"
+                                class="btn p-2 text-body mt-2"
+                            >
+                                Não tenho uma conta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Login;

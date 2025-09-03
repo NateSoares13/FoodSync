@@ -1,0 +1,13 @@
+#login_esquerda {
+    background-image: url("./assets/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#btn_entrar {
+    background-color: #23942c;
+}
+
+#btn_criar_conta {
+    background-color: #e9ecef;
+}
