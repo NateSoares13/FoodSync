@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import foodsync from "../assets/foodsync.png";
 import foodsync_vertical from "../assets/foodsync_vertical.png";
@@ -7,6 +8,7 @@ function Register() {
   const [currentUserType, setCurrentUserType] = useState("doador");
   const [loading, setLoading] = useState(false);
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   const aplicarMascaraCPF = (e) => {
     let value = e.target.value.replace(/\D/g, "");
@@ -62,7 +64,7 @@ function Register() {
         </div>
 
         <div className="col-lg-5 d-flex justify-content-center align-items-center row">
-          <div className="d-flex flex-column w-100 mx-auto px-3 px-md-4 px-lg-5" style={{maxWidth: 640}}>
+          <div className="d-flex flex-column w-100 mx-auto px-3 px-md-4 px-lg-5" style={{ maxWidth: 640 }}>
             <img className="d-block mx-auto mb-5" src={foodsync} alt="FoodSync" />
 
             <div className="form-container">
@@ -192,9 +194,13 @@ function Register() {
 
               <div className="text-center mt-3">
                 Já tem uma conta?{" "}
-                <a href="#" onClick={(ev) => { ev.preventDefault(); alert("Redirecionar para página de login"); }}>
+                <button
+                  type="button"
+                  className="btn btn-link p-0"
+                  onClick={() => navigate("/login")}
+                >
                   Fazer login
-                </a>
+                </button>
               </div>
             </div>
           </div>
