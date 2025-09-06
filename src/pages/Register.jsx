@@ -42,10 +42,8 @@ function Register() {
     if (loading) return;
     setLoading(true);
 
-    // Simula envio (substitua por chamada real à API)
     setTimeout(() => {
       alert(`Cadastro como ${currentUserType} realizado com sucesso!`);
-      // reset do formulário (works for uncontrolled inputs)
       if (formRef.current) formRef.current.reset();
       setLoading(false);
     }, 1400);
@@ -54,7 +52,6 @@ function Register() {
   return (
     <div className="container-fluid">
       <div className="row vh-100">
-        {/* Coluna esquerda */}
         <div className="col-lg-7 d-flex justify-content-center align-items-center text-white row" id="login_esquerda">
           <div className="d-flex flex-column col-lg-6 col-md-8 col-10">
             <img className="d-block mx-auto ms-0 mb-4" src={foodsync_vertical} alt="FoodSync vertical" />
@@ -64,7 +61,6 @@ function Register() {
           </div>
         </div>
 
-        {/* Coluna direita */}
         <div className="col-lg-5 d-flex justify-content-center align-items-center row">
           <div className="d-flex flex-column w-100 mx-auto px-3 px-md-4 px-lg-5" style={{maxWidth: 640}}>
             <img className="d-block mx-auto mb-5" src={foodsync} alt="FoodSync" />
@@ -75,7 +71,6 @@ function Register() {
                 Escolha se você é um doador ou receptor e complete seu cadastro
               </p>
 
-              {/* Toggle Doador/Receptor */}
               <div className="d-flex mb-4" role="tablist" aria-label="Tipo de usuário">
                 <button
                   type="button"
@@ -97,7 +92,6 @@ function Register() {
               </div>
 
               <form ref={formRef} onSubmit={handleSubmit} className="fade-transition" noValidate>
-                {/* Formulário Doador */}
                 {currentUserType === "doador" && (
                   <div id="doadorForm">
                     <div className="form-floating mb-3">
@@ -141,7 +135,6 @@ function Register() {
                   </div>
                 )}
 
-                {/* Formulário Receptor */}
                 {currentUserType === "receptor" && (
                   <div id="receptorForm">
                     <div className="form-floating mb-3">
@@ -206,8 +199,8 @@ function Register() {
             </div>
           </div>
         </div>
-      </div> {/* row */}
-    </div> /* container-fluid */
+      </div>
+    </div>
   );
 }
 

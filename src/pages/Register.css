@@ -1,8 +1,6 @@
-/* Register.css (corrigido e responsivo) */
-
 .form-wrapper {
   width: 100%;
-  max-width: 520px; /* ajuste aqui pra deixar o form proporcional à imagem */
+  max-width: 520px; 
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -16,7 +14,6 @@
   padding: 1.25rem;
   box-shadow: 0 16px 32px rgba(0,0,0,0.07);
 
-  /* evita que o formulário force scroll da página: rolagem interna */
   max-height: calc(100vh - 120px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -38,13 +35,11 @@
   transition: all 0.18s ease;
 }
 
-/* animação suave quando input focado (usa :focus-within pra evitar JS) */
 .form-floating:focus-within {
   transform: scale(1.02);
   transition: transform .18s ease;
 }
 
-/* imagens responsivas com limite de altura para balancear com o formulário */
 img.img-fluid {
   max-width: 100%;
   height: auto;
@@ -52,13 +47,11 @@ img.img-fluid {
   object-fit: contain;
 }
 
-/* inputs e botão ocupando 100% do container */
 .form-container .form-floating,
 .form-container .btn {
   width: 100%;
 }
 
-/* ajustes responsivos */
 @media (max-width: 1200px) {
   .form-wrapper { max-width: 480px; }
   .form-container { max-height: calc(100vh - 100px); padding: 1rem; }
@@ -71,7 +64,6 @@ img.img-fluid {
   img.img-fluid { max-height: calc(100vh - 120px); }
 }
 
-/* opcional: aparência da barra de rolagem interna (WebKit) */
 .form-container::-webkit-scrollbar {
   width: 8px;
 }
