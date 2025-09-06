@@ -1,8 +1,15 @@
 import "./Login.css";
 import foodsync from "../assets/foodsync.png";
 import foodsync_vertical from "../assets/foodsync_vertical.png";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+    const navigate = useNavigate();
+
+    const handleRegisterClick = () => {
+        navigate("/register");
+    };
+
     return (
         <>
             <div class="container-fluid">
@@ -64,6 +71,7 @@ function Login() {
                             <button
                                 id="btn_criar_conta"
                                 class="btn p-2 text-body mt-2"
+                                onClick={handleRegisterClick}
                             >
                                 Não tenho uma conta
                             </button>
