@@ -2,6 +2,7 @@ import "./Login.css";
 import foodsync from "../assets/foodsync.png";
 import foodsync_vertical from "../assets/foodsync_vertical.png";
 import { useNavigate } from "react-router-dom";
+import backgroundImage from "../assets/background.png"
 
 function Login() {
     const navigate = useNavigate();
@@ -15,6 +16,7 @@ function Login() {
             <div class="container-fluid">
                 <div class="row vh-100">
                     <div
+                        style={{backgroundImage: url({backgroundImage})}}
                         id="login_esquerda"
                         class="justify-content-center align-items-center d-flex col-lg-7 text-white h-100 row"
                     >
