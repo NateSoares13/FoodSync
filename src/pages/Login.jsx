@@ -16,7 +16,7 @@ function Login() {
             <div class="container-fluid">
                 <div class="row vh-100">
                     <div
-                        style={{backgroundImage: url({backgroundImage})}}
+                        style={{backgroundImage: `url(${backgroundImage})`}}
                         id="login_esquerda"
                         class="justify-content-center align-items-center d-flex col-lg-7 text-white h-100 row"
                     >
