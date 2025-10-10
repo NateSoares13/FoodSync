@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+body { background-color: #F8F9FA; font-family: 'Poppins', sans-serif; }
+
+.app-header { background-color: #2E7D32; padding: 1rem 1.5rem; color: white; }
+.app-header .navbar-brand { font-weight: 600; font-size: 1.5rem; }
+.app-header .btn-menu { background: none; border: none; color: white; font-size: 1.5rem; }
+.app-header .nav-link { color: rgba(255, 255, 255, 0.7); font-weight: 500; margin: 0 1rem; }
+.app-header .nav-link.active, .app-header .nav-link:hover { color: white; }
+.app-header .avatar { width: 32px; height: 32px; border-radius: 50%; }
+.app-header .profile-link { display: flex; align-items: center; gap: 0.5rem; }
+.app-header .notification-dot { position: absolute; top: 0; right: 0; width: 8px; height: 8px; background-color: #FF3B30; border-radius: 50%; border: 1px solid #2E7D32; }
+
+.dashboard-content { padding: 2rem 1.5rem; }
+.dashboard-title { font-size: 2rem; font-weight: 700; color: #1c1c1e; }
+.dashboard-subtitle { color: #8a8a8e; }
+
+.stat-card, .solicitacoes-card { background-color: white; border-radius: 16px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding: 1.5rem; }
+.stat-title { font-weight: 500; color: #8a8a8e; }
+.stat-value { font-size: 2.5rem; font-weight: 700; color: #1c1c1e; margin: 0; }
+
+.solicitacoes-card { padding: 0; }
+.solicitacoes-card .card-header { display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #E5E5EA; padding: 1.5rem; border-radius: 16px 16px 0 0; }
+.solicitacoes-card .card-header h5 { font-weight: 600; }
+.solicitacoes-card .card-header a { font-weight: 600; text-decoration: none; color: #2E7D32; }
+.solicitacoes-card .list-group-item { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; border: none; }
+.solicitacoes-card .form-check-input { width: 20px; height: 20px; border-radius: 6px; }
+.solicitacoes-card .solicitacao-info { flex-grow: 1; }
+.solicitacoes-card .solicitacao-info h6 { font-weight: 600; margin-bottom: 0.25rem; }
+.solicitacoes-card .solicitacao-info p { color: #8a8a8e; margin: 0; }
+.solicitacoes-card .distancia { color: #AEAEB2; }
+.badge-urgente { background-color: #FFECEB; color: #FF3B30; font-weight: 500; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; }
+.btn-doar { background-color: #2E7D32; color: white; font-weight: 600; border-radius: 8px; padding: 0.5rem 1.25rem; }
+
+.conquistas-sidebar { background-color: #DFF2DF; border-radius: 16px; padding: 1.5rem; text-align: center; }
+.conquistas-sidebar h5 { font-weight: 600; color: #1c1c1e; }
+.conquistas-sidebar > p { color: #3c3c43; margin-bottom: 1.5rem; }
+.conquistas-sidebar .conquista-item { display: flex; align-items: center; text-align: left; background: #F8F9FA; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; border: 1px solid #E5E5EA; }
+.conquistas-sidebar .conquista-icon { font-size: 1.25rem; color: #2E7D32; background-color: white; border-radius: 8px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 1rem; }
+.conquistas-sidebar .conquista-item h6 { font-weight: 600; margin: 0; }
+.conquistas-sidebar .conquista-item p { color: #8a8a8e; margin: 0; font-size: 0.85rem; }
+.btn-nova-doacao { background-color: white; color: #1c1c1e; font-weight: 600; border-radius: 12px; padding: 0.75rem; width: 100%; border: 1px solid #E5E5EA; }

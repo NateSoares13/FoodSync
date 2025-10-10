@@ -11,6 +11,12 @@ function Login() {
         navigate("/register");
     };
 
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();
+        localStorage.setItem('usuarioLogado', 'true');
+        navigate("/dashboard");
+    };
+
     return (
         <>
             <div class="container-fluid">
@@ -48,7 +54,7 @@ function Login() {
                         </div>
                     </div>
                     <div class="justify-content-center align-items-center d-flex col-lg-5 text-white h-100 row">
-                        <div class="d-flex flex-column w-50">
+                        <form className="d-flex flex-column w-75" onSubmit={handleLoginSubmit}>
                             <img
                                 class="d-block mx-auto mb-5"
                                 src={foodsync}
@@ -77,7 +83,7 @@ function Login() {
                             >
                                 Não tenho uma conta
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
