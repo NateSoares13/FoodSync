@@ -54,7 +54,7 @@ function Navbar() {
                     </ul>
                     <a
                         className="nav-link text-white"
-                        href="https://www.youtube.com/watch?v=rQJPT7P9F7Q"
+                        href="https://youtu.be/fYJqqbKjrZc?si=o_oa7qb9q5vEYmr0"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
