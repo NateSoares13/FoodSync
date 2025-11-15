@@ -1,55 +1,47 @@
 import "./Contact.css";
-import { useState } from "react";
-import { validarNome, validarMensagem } from "../utils/validation";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const phoneRegex = /^(?:\(\d{2}\) \d{4,5}-\d{4}|\(\d{2}\) \d{4}-\d{4})$/;
+
+const schema = yup
+    .object({
+        nome: yup.string().required("O nome é obrigatório!"),
+        email: yup
+            .string()
+            .email("E-mail inválido!")
+            .required("O e-mail é obrigatório!"),
+        telefone: yup.string().matches(phoneRegex, "Telefone inválido!"),
+        mensagem: yup.string().required("A mensagem é obrigatória"),
+    })
+    .required();
 
 function Contact() {
-    const [formData, setFormData] = useState({
-        nome: "",
-        email: "",
-        telefone: "",
-        mensagem: "",
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
     });
-    const [errors, setErrors] = useState({});
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
-
-        if (errors[name]) {
-            setErrors((prev) => ({
-                ...prev,
-                [name]: "",
-            }));
-        }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        const nomeValido = validarNome(formData.nome);
-        const mensagemValida = validarMensagem(formData.mensagem);
-
-        if (nomeValido && mensagemValida) {
-            setFormData({
-                nome: "",
-                email: "",
-                telefone: "",
-                mensagem: "",
-            });
+    const aplicarMascaraTelefone = (raw) => {
+        let value = raw.replace(/\D/g, "");
+        if (value.length <= 10) {
+            value = value.replace(/(\d{2})(\d)/, "($1) $2");
+            value = value.replace(/(\d{4})(\d)/, "$1-$2");
         } else {
-            setErrors({
-                nome: nomeValido
-                    ? ""
-                    : "Nome é obrigatório e deve conter pelo menos 2 caracteres",
-                mensagem: mensagemValida
-                    ? ""
-                    : "Mensagem é obrigatória e deve conter pelo menos 10 caracteres",
-            });
+            value = value.replace(/(\d{2})(\d)/, "($1) $2");
+            value = value.replace(/(\d{5})(\d)/, "$1-$2");
         }
+        return value;
     };
+
+    function saveContact(data) {
+        console.log(data);
+    }
 
     return (
         <div id="fale_conosco" className="container py-5">
@@ -60,7 +52,7 @@ function Contact() {
                         Tem dúvidas, sugestões ou precisa de ajuda? Envie sua
                         mensagem e responderemos em breve.
                     </p>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit(saveContact)}>
                         <div className="row g-3 mb-3">
                             <div className="col-md-6">
                                 <label className="form-label">Nome</label>
@@ -69,39 +61,55 @@ function Contact() {
                                     name="nome"
                                     className="form-control"
                                     placeholder="Seu Nome"
-                                    value={formData.nome}
-                                    onChange={handleChange}
-                                    required
+                                    {...register("nome")}
                                 />
                                 {errors.nome && (
                                     <p style={{ color: "red" }}>
-                                        {errors.nome}
+                                        {errors.nome?.message}
                                     </p>
                                 )}
                             </div>
                             <div className="col-md-6">
                                 <label className="form-label">E-mail</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     name="email"
                                     className="form-control"
                                     placeholder="seuemail@exemplo.com"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
+                                    {...register("email")}
                                 />
+                                {errors.email && (
+                                    <p style={{ color: "red" }}>
+                                        {errors.email?.message}
+                                    </p>
+                                )}
                             </div>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Telefone</label>
                             <input
-                                type="tel"
+                                type="text"
                                 name="telefone"
                                 className="form-control"
                                 placeholder="(11) 91234-5678"
-                                value={formData.telefone}
-                                onChange={handleChange}
+                                {...register("telefone", {
+                                    onChange: (e) => {
+                                        const masked = aplicarMascaraTelefone(
+                                            e.target.value
+                                        );
+                                        e.target.value = masked;
+                                        setValue("telefone", masked, {
+                                            shouldValidate: true,
+                                            shouldDirty: true,
+                                        });
+                                    },
+                                })}
                             />
+                            {errors.telefone && (
+                                <p style={{ color: "red" }}>
+                                    {errors.telefone?.message}
+                                </p>
+                            )}
                         </div>
                         <div className="mb-3">
                             <label className="form-label" htmlFor="mensagem">
@@ -113,13 +121,11 @@ function Contact() {
                                 className="form-control"
                                 rows="5"
                                 placeholder="Digite sua mensagem aqui..."
-                                value={formData.mensagem}
-                                onChange={handleChange}
-                                required
+                                {...register("mensagem")}
                             ></textarea>
                             {errors.mensagem && (
                                 <p style={{ color: "red" }}>
-                                    {errors.mensagem}
+                                    {errors.mensagem?.message}
                                 </p>
                             )}
                         </div>
