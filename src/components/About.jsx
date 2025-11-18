@@ -1,12 +1,28 @@
-import "./About.css";
+import styled from 'styled-components';
+
+const Cabecalho = styled.div`
+    background-color: #23942c;
+    color: white;
+    text-align: justify;
+`;
+
+const FeatureCardWrapper = styled.div`
+    text-align: center;
+`;
+
+const FeatureIcon = styled.i`
+    font-size: 2.5rem;
+    color: #23942c;
+    margin-bottom: 1rem;
+`;
 
 function FeatureCard({ title, description, icon }) {
     return (
-        <div className="col-lg cadastro container mx-2">
+        <FeatureCardWrapper className="col-lg container mx-2">
             <h2>{title}</h2>
             <p>{description}</p>
-            <i className={`bi ${icon}`}></i>
-        </div>
+            <FeatureIcon className={`bi ${icon}`}></FeatureIcon>
+        </FeatureCardWrapper>
     );
 }
 
@@ -34,7 +50,7 @@ function About() {
 
     return (
         <div id="sobre_nos">
-            <div className="cabecalho p-md-5 p-3">
+            <Cabecalho className="p-md-5 p-3">
                 <div className="container">
                     <h1 className="mx-2 mt-2">Sobre Nós</h1>
                     <p className="mx-2 mb-2">
@@ -52,7 +68,8 @@ function About() {
                         o processo mais ágil, eficiente e acessível.
                     </p>
                 </div>
-            </div>
+            </Cabecalho>
+            
             <div className="container mt-5">
                 <div className="row gap-5 pt-sm-4 align-items-center">
                     {features.map((feature, index) => (
